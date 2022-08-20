@@ -1,0 +1,45 @@
+{
+	"schema_version": 1,
+	"quilt_loader": {
+		"group": "sschr15.mods",
+		"id": "command-actions",
+		"version": "${version}",
+		"metadata": {
+			"name": "Command Actions",
+			"description": "Adds the ability to run mcfunction files from certain event calls.",
+			"contributors": {
+				"sschr15": "Owner"
+			},
+			"contact": {
+				"issues": "https://github.com/sschr15/command-actions/issues",
+				"sources": "https://github.com/sschr15/command-actions"
+			},
+			"icon": "assets/command-actions/icon.png"
+		},
+		"intermediate_mappings": "net.fabricmc:intermediary",
+		"entrypoints": {
+			"init": {
+				"adapter": "kotlin",
+				"value": "sschr15.mods.commandactions.impl.CommandActionsInternal"
+			}
+		},
+		"depends": [
+			{
+				"id": "quilt_loader",
+				"versions": ">=0.17.0-",
+				"reason": "This is a Quilt mod. As such, it requires Quilt Loader."
+			},
+			{
+				"id": "qkl",
+				"versions": "~0.1.0",
+				"reason": "This mod is written in Kotlin and requires Quilt Kotlin Libraries for Kotlin's stdlib."
+			},
+			{
+				"id": "minecraft",
+				"versions": ">=1.19.2",
+				"reason": "This mod was developed for Minecraft 1.19.2."
+			}
+		]
+	},
+	"mixin": "command-actions.mixins.json"
+}
